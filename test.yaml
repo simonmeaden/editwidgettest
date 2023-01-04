@@ -1,0 +1,7 @@
+  # Leading spaces
+[
+   By two,        # in flow style
+  Also by two,
+   Still by two,   # content nor
+   [ value1, value 2, "value 3" ] # another comment
+    ]

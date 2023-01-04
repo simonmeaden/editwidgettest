@@ -1,0 +1,39 @@
+[submodule "libs/QYaml"]
+	path = libs/QYaml
+	url = https://github.com/simonmeaden/QYaml.git
+[submodule "libs/QHtml"]
+	path = libs/QHtml
+	url = https://github.com/simonmeaden/QHtml.git
+[submodule "libs/QLNPlainText"]
+	path = libs/QLNPlainText
+	url = https://github.com/simonmeaden/QLNPlainText.git
+[submodule "libs/Widgets"]
+	path = libs/Widgets
+	url = https://github.com/simonmeaden/Widgets.git
+[submodule "libs/Help"]
+	path = libs/Help
+	url = https://github.com/simonmeaden/Help.git
+[submodule "libs/LabelledWidgets"]
+	path = libs/LabelledWidgets
+	url = https://github.com/simonmeaden//LabelledWidgets.git
+[submodule "libs/Language"]
+	path = libs/Language
+	url = https://github.com/simonmeaden//Language.git
+[submodule "libs/Docker"]
+	path = libs/Docker
+	url = https://github.com/simonmeaden/Docker.git
+[submodule "libs/QXml"]
+	path = libs/QXml
+	url = https://github.com/simonmeaden/QXml.git
+[submodule "libs/QMarkdown"]
+	path = libs/QMarkdown
+	url = https://github.com/simonmeaden/QMarkdown.git
+[submodule "libs/Utilities"]
+	path = libs/Utilities
+	url = https://github.com/simonmeaden/Utilities.git
+[submodule "libs/xmlwrapp"]
+	path = libs/xmlwrapp
+	url = https://github.com/vslavik/xmlwrapp.git
+[submodule "libs/QLogger"]
+	path = libs/QLogger
+	url = https://github.com/francescmm/QLogger.git

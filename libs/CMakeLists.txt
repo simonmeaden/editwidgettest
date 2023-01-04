@@ -1,0 +1,14 @@
+
+add_subdirectory(Utilities)
+add_subdirectory(Help)
+add_subdirectory(Language)
+add_subdirectory(LabelledWidgets)
+add_subdirectory(Docker)
+add_subdirectory(QLNPlainText)
+add_subdirectory(QYaml)
+add_subdirectory(QXml)
+add_subdirectory(QHtml)
+add_subdirectory(QMarkdown)
+add_subdirectory(Widgets)
+
+add_subdirectory(QLogger)
