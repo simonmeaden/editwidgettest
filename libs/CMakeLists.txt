@@ -11,4 +11,7 @@ add_subdirectory(QHtml)
 add_subdirectory(QMarkdown)
 add_subdirectory(Widgets)
 
-add_subdirectory(QLogger)
+add_subdirectory(xmlwrapp)
+add_subdirectory(QuaZip)
+#add_subdirectory(QLogger)
+add_subdirectory(Log4Qt)

@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "qyaml/qyamledit.h"
+#include "yaml/qyamledit.h"
 
 #include <QGridLayout>
 #include <QString>

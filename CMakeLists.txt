@@ -24,6 +24,8 @@ if (USE_QT_VERSION EQUAL 5)
         Xml
         Svg
         LinguistTools
+        Concurrent
+        Sql
     )
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTOUIC ON)
@@ -41,6 +43,8 @@ elseif(USE_QT_VERSION EQUAL 6)
         Xml
         Svg
         LinguistTools
+        Concurrent
+        Sql
       OPTIONAL_COMPONENTS
         Core5Compat
     )
@@ -56,6 +60,8 @@ else()
         Xml
         Svg
         LinguistTools
+        Concurrent
+        Sql
       OPTIONAL_COMPONENTS
         Core5Compat
     )
@@ -71,6 +77,8 @@ else()
             Xml
             Svg
             LinguistTools
+            Concurrent
+            Sql
         )
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -102,6 +110,6 @@ find_library(TIDY tidy REQUIRED PATHS /usr/local)
 # not already found locally.
 #add_subdirectory(contrib)
 # My libs
-#add_subdirectory(libs)
+add_subdirectory(libs)
 # My apps
 add_subdirectory(apps)

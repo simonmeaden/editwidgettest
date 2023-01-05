@@ -4,76 +4,96 @@ project(HtmlEditApp VERSION 0.1.0 LANGUAGES CXX)
 
 set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defaults to ${QT_VERSION_MAJOR}")
 
-if (USE_QT_VERSION EQUAL 5)
-    message("QT5")
-    find_package(Qt5
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-    )
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTOUIC ON)
-    set(CMAKE_AUTORCC ON)
-    include(GNUInstallDirs)
-elseif(USE_QT_VERSION EQUAL 6)
-    message("QT6")
-    find_package(Qt6
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-      OPTIONAL_COMPONENTS
-        Core5Compat
-    )
-    qt_standard_project_setup()
-else()
-    find_package(Qt6
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-      OPTIONAL_COMPONENTS
-        Core5Compat
-    )
-    qt_standard_project_setup()
-    if (NOT Qt6_FOUND)
-        find_package(Qt5
-          REQUIRED
-          COMPONENTS
-            Core
-            Gui
-            Widgets
-            Network
-            Xml
-            Svg
-            LinguistTools
-        )
-        set(CMAKE_AUTOMOC ON)
-        set(CMAKE_AUTOUIC ON)
-        set(CMAKE_AUTORCC ON)
-        include(GNUInstallDirs)
-    endif()
-endif()
+#if (USE_QT_VERSION EQUAL 5)
+#    message("QT5")
+#    find_package(Qt5
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#    )
+#    set(CMAKE_AUTOMOC ON)
+#    set(CMAKE_AUTOUIC ON)
+#    set(CMAKE_AUTORCC ON)
+#    include(GNUInstallDirs)
+#elseif(USE_QT_VERSION EQUAL 6)
+#    message("QT6")
+#    find_package(Qt6
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#      OPTIONAL_COMPONENTS
+#        Core5Compatif (USE_QT_VERSION EQUAL 5)
+#        message("QT5")
+#        find_package(Qt5
+#          REQUIRED
+#          COMPONENTS
+#            Core
+#            Gui
+#            Widgets
+#            Network
+#            Xml
+#            Svg
+#            LinguistTools
+#        )
+#        set(CMAKE_AUTOMOC ON)
+#        set(CMAKE_AUTOUIC ON)
+#        set(CMAKE_AUTORCC ON)
+#        include(GNUInstallDirs)
+#    elseif(USE_QT_VERSION EQUAL 6)
+#        message("QT6")
+#        find_package(Qt6
 
-add_executable(htmledittestapp "")
+#    )
+#    qt_standard_project_setup()
+#else()
+#    find_package(Qt6
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#      OPTIONAL_COMPONENTS
+#        Core5Compat
+#    )
+#    qt_standard_project_setup()
+#    if (NOT Qt6_FOUND)
+#        find_package(Qt5
+#          REQUIRED
+#          COMPONENTS
+#            Core
+#            Gui
+#            Widgets
+#            Network
+#            Xml
+#            Svg
+#            LinguistTools
+#        )
+#        set(CMAKE_AUTOMOC ON)
+#        set(CMAKE_AUTOUIC ON)
+#        set(CMAKE_AUTORCC ON)
+#        include(GNUInstallDirs)
+#    endif()
+#endif()
 
-target_include_directories(htmledittestapp
+add_executable(${PROJECT_NAME} "")
+
+target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -81,14 +101,14 @@ target_include_directories(htmledittestapp
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_compile_options(htmledittestapp
+target_compile_options(${PROJECT_NAME}
     PRIVATE
         -Werror
 #        -DCMAKE_PREFIX_PATH=/opt/Qt/
 )
 
 target_sources(
-    htmledittestapp
+    ${PROJECT_NAME}
   PRIVATE
     src/main.cpp
     src/mainwindow.h
@@ -100,12 +120,12 @@ target_sources(
 
 )
 
-target_compile_features(htmledittestapp
+target_compile_features(${PROJECT_NAME}
     PRIVATE
         cxx_std_17
 )
 
-target_link_libraries(htmledittestapp
+target_link_libraries(${PROJECT_NAME}
     PUBLIC
         Qt${QT_VERSION_MAJOR}::Core
         Qt${QT_VERSION_MAJOR}::Widgets
@@ -116,14 +136,14 @@ target_link_libraries(htmledittestapp
         Qt${QT_VERSION_MAJOR}::Svg
 
         QuaZip::QuaZip
-        QLogger::QLogger
+#        QLogger::QLogger
         yaml-cpp
 
         Utilities::Utilities
         Docker::Docker
         QLNPlainText::QLNPlainText
         QHtml::QHtml
-        QXml::QXml
+        QXmlEdit::QXmlEdit
         QYaml::QYaml
         QMarkdown::QMarkdown
 )

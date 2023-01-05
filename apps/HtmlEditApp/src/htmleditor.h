@@ -6,6 +6,7 @@
 #include "docker/dockwidget.h"
 #include "config/baseconfig.h"
 #include "html/htmledit.h"
+#include "utilities/keymap.h"
 
 class HtmlEditor : public DockWidget
 {
