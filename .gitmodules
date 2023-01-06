@@ -43,3 +43,6 @@
 [submodule "libs/QYaml"]
 	path = libs/QYaml
 	url = https://github.com/simonmeaden/QYaml.git
+[submodule "libs/libxml2"]
+	path = libs/libxml2
+	url = https://github.com/GNOME/libxml2.git
