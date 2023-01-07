@@ -12,86 +12,110 @@ set(BUILD_SHARED_LIBS NO CACHE BOOL "Set libraries static")
 
 message ("Using " ${USE_QT_VERSION})
 
-if (USE_QT_VERSION EQUAL 5)
-    message("QT5")
-    find_package(Qt5
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-        Concurrent
-        Sql
-    )
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTOUIC ON)
-    set(CMAKE_AUTORCC ON)
-    include(GNUInstallDirs)
-elseif(USE_QT_VERSION EQUAL 6)
-    message("QT6")
-    find_package(Qt6
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-        Concurrent
-        Sql
-      OPTIONAL_COMPONENTS
-        Core5Compat
-    )
-    qt_standard_project_setup()
-else()
-    find_package(Qt6
-      REQUIRED
-      COMPONENTS
-        Core
-        Gui
-        Widgets
-        Network
-        Xml
-        Svg
-        LinguistTools
-        Concurrent
-        Sql
-      OPTIONAL_COMPONENTS
-        Core5Compat
-    )
-    qt_standard_project_setup()
-    if (NOT Qt6_FOUND)
-        find_package(Qt5
-          REQUIRED
-          COMPONENTS
-            Core
-            Gui
-            Widgets
-            Network
-            Xml
-            Svg
-            LinguistTools
-            Concurrent
-            Sql
-        )
-        set(CMAKE_AUTOMOC ON)
-        set(CMAKE_AUTOUIC ON)
-        set(CMAKE_AUTORCC ON)
-        include(GNUInstallDirs)
-    endif()
-endif()
+#if (USE_QT_VERSION EQUAL 5)
+#    message("QT5")
+#    find_package(Qt5
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#        Concurrent
+#        Sql
+##      OPTIONAL_COMPONENTS
+##        Zlib
+#    )
+#    set(CMAKE_AUTOMOC ON)
+#    set(CMAKE_AUTOUIC ON)
+#    set(CMAKE_AUTORCC ON)
+#    include(GNUInstallDirs)
+#elseif(USE_QT_VERSION EQUAL 6)
+#    message("QT6")
+#    find_package(Qt6
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#        Concurrent
+#        Sql
+#      OPTIONAL_COMPONENTS
+#        Core5Compat
+##        Zlib
+#    )
+#    qt_standard_project_setup()
+#else()
+#    find_package(Qt6
+#      REQUIRED
+#      COMPONENTS
+#        Core
+#        Gui
+#        Widgets
+#        Network
+#        Xml
+#        Svg
+#        LinguistTools
+#        Concurrent
+#        Sql
+#      OPTIONAL_COMPONENTS
+#        Core5Compat
+##        Zlib
+#    )
+#    qt_standard_project_setup()
+#    if (NOT Qt6_FOUND)
+#        find_package(Qt5
+#          REQUIRED
+#          COMPONENTS
+#            Core
+#            Gui
+#            Widgets
+#            Network
+#            Xml
+#            Svg
+#            LinguistTools
+#            Concurrent
+#            Sql
+##        OPTIONAL_COMPONENTS
+##            Zlib
+#        )
+#        set(CMAKE_AUTOMOC ON)
+#        set(CMAKE_AUTOUIC ON)
+#        set(CMAKE_AUTORCC ON)
+#        include(GNUInstallDirs)
+#    endif()
+#endif()
 
-if (Qt5_FOUND)
-  message("Using Qt5 ")
-elseif (Qt6_FOUND)
-  message("Using Qt6 ")
-endif()
+find_package(Qt6
+  REQUIRED
+  COMPONENTS
+    Core
+    Gui
+    Widgets
+    Network
+    Xml
+    Svg
+    LinguistTools
+    Concurrent
+    Sql
+  OPTIONAL_COMPONENTS
+    Core5Compat
+#        Zlib
+)
+qt_standard_project_setup()
+
+#if (Qt5_FOUND)
+#  message("Using Qt5 ")
+#elseif (Qt6_FOUND)
+#  message("Using Qt6 ")
+#endif()
 
 
 

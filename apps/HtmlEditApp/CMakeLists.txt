@@ -16,6 +16,10 @@ set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defau
 #        Xml
 #        Svg
 #        LinguistTools
+#        Concurrent
+#        Sql
+##      OPTIONAL_COMPONENTS
+##        Zlib
 #    )
 #    set(CMAKE_AUTOMOC ON)
 #    set(CMAKE_AUTOUIC ON)
@@ -33,28 +37,11 @@ set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defau
 #        Xml
 #        Svg
 #        LinguistTools
+#        Concurrent
+#        Sql
 #      OPTIONAL_COMPONENTS
-#        Core5Compatif (USE_QT_VERSION EQUAL 5)
-#        message("QT5")
-#        find_package(Qt5
-#          REQUIRED
-#          COMPONENTS
-#            Core
-#            Gui
-#            Widgets
-#            Network
-#            Xml
-#            Svg
-#            LinguistTools
-#        )
-#        set(CMAKE_AUTOMOC ON)
-#        set(CMAKE_AUTOUIC ON)
-#        set(CMAKE_AUTORCC ON)
-#        include(GNUInstallDirs)
-#    elseif(USE_QT_VERSION EQUAL 6)
-#        message("QT6")
-#        find_package(Qt6
-
+#        Core5Compat
+##        Zlib
 #    )
 #    qt_standard_project_setup()
 #else()
@@ -68,8 +55,11 @@ set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defau
 #        Xml
 #        Svg
 #        LinguistTools
+#        Concurrent
+#        Sql
 #      OPTIONAL_COMPONENTS
 #        Core5Compat
+##        Zlib
 #    )
 #    qt_standard_project_setup()
 #    if (NOT Qt6_FOUND)
@@ -83,6 +73,10 @@ set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defau
 #            Xml
 #            Svg
 #            LinguistTools
+#            Concurrent
+#            Sql
+##        OPTIONAL_COMPONENTS
+##            Zlib
 #        )
 #        set(CMAKE_AUTOMOC ON)
 #        set(CMAKE_AUTOUIC ON)
@@ -91,6 +85,23 @@ set(QUAZIP_QT_MAJOR_VERSION 6 CACHE STRING "Qt version to use (4, 5 or 6), defau
 #    endif()
 #endif()
 
+find_package(Qt6
+  REQUIRED
+  COMPONENTS
+    Core
+    Gui
+    Widgets
+    Network
+    Xml
+    Svg
+    LinguistTools
+    Concurrent
+    Sql
+  OPTIONAL_COMPONENTS
+    Core5Compat
+#        Zlib
+)
+qt_standard_project_setup()
 add_executable(${PROJECT_NAME} "")
 
 target_include_directories(${PROJECT_NAME}
