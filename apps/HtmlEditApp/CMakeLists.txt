@@ -157,4 +157,5 @@ target_link_libraries(${PROJECT_NAME}
         QXmlEdit::QXmlEdit
         QYaml::QYaml
         QMarkdown::QMarkdown
+        XmlWrapp::XmlWrapp
 )

@@ -1,7 +1,12 @@
-  # Leading spaces
-[
-   By two,        # in flow style
-  Also by two,
-   Still by two,   # content nor
-   [ value1, value 2, "value 3" ] # another comment
-    ]
+%YAML 1.3
+%TAG  !u! tag:unity3d.com,2011:
+  ---
+  [5.8, 5.10, third, 5.14]
+...
+
+---
+{x: 3, y: four, z: 5}
+
+%YAML 1.1
+---
+
