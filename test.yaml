@@ -1,12 +1,36 @@
-%YAML 1.3
+%YAML 1.2
 %TAG  !u! tag:unity3d.com,2011:
-  ---
-  [5.8, 5.10, third, 5.14]
+---
+[
+  tabs	tab	char,
+  tabbed\tchar,
+  http://example.org/,
+  1st non-empty
+
+
+  2nd non-empty
+  3rd non-empty
+  ,
+   # this is bad,
+  #this is ok,
+  : this is bad,
+  :this is ok,
+  this @ is ok,
+  @but this not,
+  "@or this,
+  @or this",
+  "@but this is",
+  !or this,
+  *or this,
+  #or this,
+  >or this,
+  |or this,
+  {or this, # but hard to detect
+  }or this, # but hard to detect
+  [or this, # but hard to detect
+  ]or this, # but hard to detect
+  ,or this, # TODO
+
+]
+
 ...
-
----
-{x: 3, y: four, z: 5}
-
-%YAML 1.1
----
-

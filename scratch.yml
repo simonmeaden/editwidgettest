@@ -1,0 +1,51 @@
+---
+
+#[5.8, 5.10, third, 5.14]
+
+...
+
+---
+
+[ {x: 3, y: 4, z: 5}, {x: 5, y: 4, z: 3} ]
+
+
+%YAML 1.1
+---
+
+#{x: 3, y: four, z: 5}
+
+# no end (optional)
+
+plain unqoted:
+  This unquoted scalar
+  spans many lines.
+
+quoted: "So does this
+  quoted scalar.\n"
+
+special:
+  ---
+
+multi level:
+  ---
+  longer
+  string
+
+ascii: |
+  \//||\/||
+  // ||  ||__
+
+folded scalar: >
+  Mark McGwire's
+  year was crippled
+  by a knee injury.
+
+folded newlines:  >
+  Sammy Sosa completed another
+  fine season with great stats.
+
+    63 Home Runs
+    0.288 Batting Average
+
+  What a year!
+
